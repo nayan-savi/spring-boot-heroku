@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,7 +20,7 @@ public class CourseController {
 
     @ResponseBody
     @RequestMapping(value = "/create", method = RequestMethod.POST)
-    public ResponseEntity create(@RequestBody Course course) throws ParseException {
+    public ResponseEntity create(@RequestBody Course course) {
         boolean save = courseService.save(course);
         return ResponseEntity.ok(save);
     }
